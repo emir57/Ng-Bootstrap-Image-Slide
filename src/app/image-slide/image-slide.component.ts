@@ -13,3 +13,9 @@ export class ImageSlideComponent implements OnInit {
   }
 
 }
+
+export interface Photo {
+  id: string;
+  url: string;
+  name?: string;
+}
