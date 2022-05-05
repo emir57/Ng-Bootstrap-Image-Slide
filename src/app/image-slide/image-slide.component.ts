@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
 declare var $: any;
 
 @Component({
@@ -6,11 +6,15 @@ declare var $: any;
   templateUrl: './image-slide.component.html',
   styleUrls: ['./image-slide.component.css']
 })
-export class ImageSlideComponent implements OnInit {
+export class ImageSlideComponent implements OnInit, AfterViewInit {
 
   @Input() photos: Photo[] = [];
   @Input() id: string = "";
   constructor() { }
+
+  ngAfterViewInit(): void {
+    this.ImageSlide();
+  }
 
   ngOnInit(): void {
   }
