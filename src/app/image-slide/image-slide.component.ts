@@ -51,14 +51,18 @@ export class ImageSlideComponent implements OnInit, AfterViewInit {
         photos[i].style.display = "none"
       }
     }
+    function checkPhotoIsMain(photos: any[]) {
+      let isDefineMain = false;
+      photos.forEach((photo) => {
+        if (photo.isMain) {
+          isDefineMain = true;
+        }
+      })
+      return isDefineMain;
+    }
     var photos = $(`.photoProduct${this.id}`);
     let i = 0;
-    let isDefineMain = false;
-    this.photos.forEach((photo, index) => {
-      if (photo.isMain) {
-        isDefineMain = true;
-      }
-    })
+    let isDefineMain = checkPhotoIsMain(this.photos);
     photosDisplayNone(photos);
     this.photos.forEach((photo, index) => {
       if (!isDefineMain && index == 0) {
