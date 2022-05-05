@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { ImageSlideComponent } from "./image-slide.component";
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    ImageSlideComponent
+  ],
   imports: [
     CommonModule
   ]
