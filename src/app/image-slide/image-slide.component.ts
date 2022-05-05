@@ -18,6 +18,12 @@ export class ImageSlideComponent implements OnInit, AfterViewInit {
     this.ImageSlide();
   }
 
+  getCarouselStyles() {
+    let style = "";
+    if (this.width !== "") style += `width:${this.width};`;
+    if (this.height !== "") style += `height:${this.height};`;
+  }
+
   ngOnInit(): void {
     this.setId();
   }
