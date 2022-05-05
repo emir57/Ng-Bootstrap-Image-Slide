@@ -81,6 +81,7 @@ export class ImageSlideComponent implements OnInit, AfterViewInit {
       photosDisplayNone(photos);
       if (i > photos.length - 1) {
         i = 0;
+        if (currentPhotoIndex == 0) i++;
       }
       photos[i].style.display = "block";
     })
