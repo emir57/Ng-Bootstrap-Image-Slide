@@ -60,6 +60,9 @@ export class ImageSlideComponent implements OnInit, AfterViewInit {
       })
       return isDefineMain;
     }
+    function setPhotoDisplayBlock(i: number, photos: any[]) {
+      photos[i].style.display = "block";
+    }
     let currentPhotoIndex = 0;
     var photos = $(`.photoProduct${this.id}`);
     let i = 0;
@@ -75,7 +78,6 @@ export class ImageSlideComponent implements OnInit, AfterViewInit {
         currentPhotoIndex = index;
       }
     })
-    console.log(currentPhotoIndex)
     $(`#productNextBtn${this.id}`).click(function () {
       i++;
       photosDisplayNone(photos);
@@ -84,7 +86,7 @@ export class ImageSlideComponent implements OnInit, AfterViewInit {
         if (currentPhotoIndex == i) i++;
       }
       currentPhotoIndex = i;
-      photos[i].style.display = "block";
+      setPhotoDisplayBlock(i, photos);
     })
     $(`#productPrevBtn${this.id}`).click(function () {
       i--;
@@ -94,7 +96,7 @@ export class ImageSlideComponent implements OnInit, AfterViewInit {
       }
       currentPhotoIndex = i;
       photosDisplayNone(photos);
-      photos[i].style.display = "block";
+      setPhotoDisplayBlock(i, photos);
     })
   }
 
