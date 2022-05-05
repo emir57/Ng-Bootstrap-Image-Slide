@@ -8,6 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class ImageSlideComponent implements OnInit {
 
   @Input() photos: Photo[] = [];
+  @Input() id: string = "";
   constructor() { }
 
   ngOnInit(): void {
