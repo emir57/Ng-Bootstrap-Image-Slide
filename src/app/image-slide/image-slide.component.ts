@@ -17,6 +17,10 @@ export class ImageSlideComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
+    this.setId();
+  }
+
+  setId() {
     if (this.id === "") {
       this.id = ((new Date).getTime() * 0.3) + "";
     }
