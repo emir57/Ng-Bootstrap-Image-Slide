@@ -26,7 +26,7 @@ export class ImageSlideComponent implements OnInit {
   }
   ImageSlide() {
     setTimeout(() => {
-      function photosDisplayNone(photos) {
+      function photosDisplayNone(photos: any[]) {
         for (let i = 0; i < photos.length; i++) {
           photos[i].style.display = "none"
         }
