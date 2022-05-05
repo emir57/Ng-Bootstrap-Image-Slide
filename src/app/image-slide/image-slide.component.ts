@@ -20,9 +20,8 @@ export class ImageSlideComponent implements OnInit {
   photocheck(photo: Photo) {
     if (photo.isMain == true) {
       return `carousel-item active photoProduct${this.id}`
-    } else {
-      return `carousel-item photoProduct${this.id}`
     }
+    return `carousel-item photoProduct${this.id}`
   }
 
 }
