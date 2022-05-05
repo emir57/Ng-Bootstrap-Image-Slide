@@ -46,37 +46,35 @@ export class ImageSlideComponent implements OnInit, AfterViewInit {
     return `carousel-item photoProduct${this.id}`
   }
   ImageSlide() {
-    setTimeout(() => {
-      function photosDisplayNone(photos: any[]) {
-        for (let i = 0; i < photos.length; i++) {
-          photos[i].style.display = "none"
-        }
+    function photosDisplayNone(photos: any[]) {
+      for (let i = 0; i < photos.length; i++) {
+        photos[i].style.display = "none"
       }
-      var photos = $(`.photoProduct${this.id}`);
-      let i = 0;
+    }
+    var photos = $(`.photoProduct${this.id}`);
+    let i = 0;
+    photosDisplayNone(photos);
+    this.photos.forEach(photo => {
+      if (photo.isMain) {
+        $(`#photo${photo.id}`).show();
+      }
+    })
+    $(`#productNextBtn${this.id}`).click(function () {
+      i++;
       photosDisplayNone(photos);
-      this.photos.forEach(photo => {
-        if (photo.isMain) {
-          $(`#photo${photo.id}`).show();
-        }
-      })
-      $(`#productNextBtn${this.id}`).click(function () {
-        i++;
-        photosDisplayNone(photos);
-        if (i > photos.length - 1) {
-          i = 0;
-        }
-        photos[i].style.display = "block";
-      })
-      $(`#productPrevBtn${this.id}`).click(function () {
-        i--;
-        if (i < 0) {
-          i = photos.length - 1;
-        }
-        photosDisplayNone(photos);
-        photos[i].style.display = "block";
-      })
-    }, 500);
+      if (i > photos.length - 1) {
+        i = 0;
+      }
+      photos[i].style.display = "block";
+    })
+    $(`#productPrevBtn${this.id}`).click(function () {
+      i--;
+      if (i < 0) {
+        i = photos.length - 1;
+      }
+      photosDisplayNone(photos);
+      photos[i].style.display = "block";
+    })
   }
 
 }
