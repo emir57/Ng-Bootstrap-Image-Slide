@@ -81,15 +81,18 @@ export class ImageSlideComponent implements OnInit, AfterViewInit {
       photosDisplayNone(photos);
       if (i > photos.length - 1) {
         i = 0;
-        if (currentPhotoIndex == 0) i++;
+        if (currentPhotoIndex == i) i++;
       }
+      currentPhotoIndex = i;
       photos[i].style.display = "block";
     })
     $(`#productPrevBtn${this.id}`).click(function () {
       i--;
       if (i < 0) {
         i = photos.length - 1;
+        if (currentPhotoIndex == i) i--;
       }
+      currentPhotoIndex = i;
       photosDisplayNone(photos);
       photos[i].style.display = "block";
     })
