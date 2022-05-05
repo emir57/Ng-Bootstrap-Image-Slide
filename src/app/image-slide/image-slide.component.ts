@@ -17,6 +17,7 @@ export class ImageSlideComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
+    this.id = ((new Date).getTime() * 0.3) + "";
   }
 
   getCarouselId() {
