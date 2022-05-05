@@ -2,7 +2,7 @@ import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
 declare var $: any;
 
 @Component({
-  selector: 'app-image-slide',
+  selector: 'image-slide',
   templateUrl: './image-slide.component.html',
   styleUrls: ['./image-slide.component.css']
 })
