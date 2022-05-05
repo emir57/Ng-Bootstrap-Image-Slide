@@ -22,6 +22,7 @@ export class ImageSlideComponent implements OnInit, AfterViewInit {
     let style = "";
     if (this.width !== "") style += `width:${this.width};`;
     if (this.height !== "") style += `height:${this.height};`;
+    return style;
   }
 
   ngOnInit(): void {
