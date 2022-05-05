@@ -10,6 +10,8 @@ export class ImageSlideComponent implements OnInit, AfterViewInit {
 
   @Input() photos: Photo[] = [];
   @Input() id: string = "";
+  @Input() width: string = "";
+  @Input() height: string = "";
   constructor() { }
 
   ngAfterViewInit(): void {
@@ -22,7 +24,7 @@ export class ImageSlideComponent implements OnInit, AfterViewInit {
 
   setId() {
     if (this.id === "") {
-      this.id = (((new Date).getTime() * 0.3) + "").substring(0,2);
+      this.id = (((new Date).getTime() * 0.3) + "").substring(0, 2);
       console.log(this.id)
     }
   }
