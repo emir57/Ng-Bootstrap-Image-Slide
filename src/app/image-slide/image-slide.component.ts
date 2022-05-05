@@ -17,6 +17,13 @@ export class ImageSlideComponent implements OnInit {
   getCarouselId() {
     return `carousel${this.id}`;
   }
+  photocheck(photo: Photo) {
+    if (photo.isMain == true) {
+      return `carousel-item active photoProduct${this.id}`
+    } else {
+      return `carousel-item photoProduct${this.id}`
+    }
+  }
 
 }
 
@@ -24,4 +31,5 @@ export interface Photo {
   id: string;
   url: string;
   name?: string;
+  isMain?: boolean;
 }
