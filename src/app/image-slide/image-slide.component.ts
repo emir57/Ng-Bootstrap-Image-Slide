@@ -60,6 +60,7 @@ export class ImageSlideComponent implements OnInit, AfterViewInit {
       })
       return isDefineMain;
     }
+    let currentPhotoIndex = 0;
     var photos = $(`.photoProduct${this.id}`);
     let i = 0;
     let isDefineMain = checkPhotoIsMain(this.photos);
@@ -67,11 +68,14 @@ export class ImageSlideComponent implements OnInit, AfterViewInit {
     this.photos.forEach((photo, index) => {
       if (!isDefineMain && index == 0) {
         $(`#photo${photo.id}`).show();
+        currentPhotoIndex = index;
       }
       else if (photo.isMain && isDefineMain) {
         $(`#photo${photo.id}`).show();
+        currentPhotoIndex = index;
       }
     })
+    console.log(currentPhotoIndex)
     $(`#productNextBtn${this.id}`).click(function () {
       i++;
       photosDisplayNone(photos);
