@@ -14,6 +14,10 @@ export class ImageSlideComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  getCarouselId() {
+    return `carousel${this.id}`;
+  }
+
 }
 
 export interface Photo {
